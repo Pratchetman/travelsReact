@@ -5,8 +5,16 @@ import axios from "axios";
 
 export const TravelsContext = createContext();
 
+const initialUser = {
+  name: "",
+  lastname: "",
+  address: "",
+  phone: "",
+  img: ""
+}
+
 export const TravelsProvider = (props) => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(initialUser);
   const [travel, setTravel] = useState();
 
   useEffect(() => {

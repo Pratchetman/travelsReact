@@ -20,16 +20,22 @@ export const Register = () => {
   }
 
   const handleSubmit = () => {
-    axios
-    .post("http://localhost:4000/users/createUser", register)
-    .then((res)=>{console.log(res);navigate("/login")})
-    .catch((err)=>{
-      if(err.response.data.error.errno === 1062){
-        setMessageError("Email duplicado");
-      }else{
-        setMessageError("Error en el registro");
-      }
-    })
+    if (!register.email || !register.password || !register.name){
+      setMessageError("Debes rellenar todos los campos");
+    }
+    else{
+      axios
+      .post("http://localhost:4000/users/createUser", register)
+      .then((res)=>{console.log(res);navigate("/login")})
+      .catch((err)=>{
+        if(err.response.data.error.errno === 1062){
+          setMessageError("Email duplicado");
+        }else{
+          setMessageError("Error en el registro");
+        }
+      })
+    } 
+   
   };
 
   return (

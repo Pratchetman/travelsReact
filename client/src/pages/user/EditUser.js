@@ -10,7 +10,8 @@ const initialValue = {
   name: "",
   lastname: "",
   address: "",
-  phone: ""
+  phone: "",
+  img: ""
 }
 
 export const EditUser = () => {
@@ -30,7 +31,7 @@ export const EditUser = () => {
     let {name, value} = e.target;
     setEditUser({...editUser, [name]:value});
   }
-
+  
   const handleChangeFile = (e) =>{
     setFile(e.target.files[0]);
   }
@@ -43,13 +44,18 @@ export const EditUser = () => {
     axios
     .put(`http://localhost:4000/users/editUser/${user.user_id}`, newFormData)
     .then((res)=>{
+      let newImg = res.data.img;
+      if (!res.data.img){
+        editUser.img = user.img
+      }else{
+        editUser.img = newImg
+      }
       setUser(editUser);
       navigate("/user");
     })
     .catch((err)=>console.log(err));
+
   }
-
-
 
   return (
     <div>

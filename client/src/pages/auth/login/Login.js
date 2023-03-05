@@ -33,7 +33,7 @@ const handleSubmit = (e) =>{
       saveLocalStorageTravel(res.data.token);
       setUser(res.data.user);
       const type = res.data.user.type;
-      type === 0 ? navigate("/allUsers") : type === 1 ? navigate("/admin") : navigate("/");
+      type === 0 ? navigate("/user") : type === 1 ? navigate("/admin") : navigate("/");
     })
     .catch((err)=>console.log(err))
   }
