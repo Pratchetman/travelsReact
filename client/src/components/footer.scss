@@ -1,0 +1,13 @@
+.footerTravel{
+    background-color: RGB(33,37,41);
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   margin-top: 80px;
+    p{
+        color: rgba(255, 255, 255, 0.556);
+        margin: 0px;
+    }
+}
