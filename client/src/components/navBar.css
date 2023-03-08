@@ -1,0 +1,38 @@
+.buttons {
+  margin: 0px 5px;
+}
+
+.imgSmall {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.imgSmall img {
+  height: 50px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.imgSmall:hover {
+  cursor: pointer;
+}
+
+.nameSmall {
+  background-color: RGB(13, 110, 253);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+.nameSmall h1 {
+  margin: 0px;
+  color: white;
+}/*# sourceMappingURL=navBar.css.map */

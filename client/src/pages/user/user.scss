@@ -1,23 +1,24 @@
 .mainUser{
     margin: auto;
-    width: 400px;
+    width: 700px;
     padding: 30px;
+    padding-bottom: 10px;
     border: 4px solid rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.831);
     border-radius: 8px;
     box-shadow: 1px 1px 2px black;
-    
     margin-top: 40px;
+}
+.rowUser{
     display: flex;
-    flex-direction: column;
-    gap:20px;
-    
+    flex-direction: row;
+    gap: 20px
 }
 .title{
     color: white;
     text-shadow: 1px 1px 2px black;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 h4{
     margin: 10px;
@@ -38,4 +39,22 @@ h5{
         object-fit: cover;
         object-position: center;
     }
+}
+.viajes{
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 8px;
+    border: 4px solid white;
+    box-shadow: 1px 1px 2px black;
+    padding-bottom: 20px;
+    margin: auto;
+    margin-top: 60px;
+    .botonNuevoViaje{
+        text-align: center;
+    }
+}
+.buttonWidth{
+    width: fit-content !important;
+    margin: auto !important;
+    
 }

@@ -16,7 +16,7 @@ export const Login = () => {
 const [login, setLogin] = useState(loginDefault);
 const navigate = useNavigate();
 const [message, setMessage] = useState("");
-const {setUser, user} = useContext(TravelsContext)
+const {setUser, user, setLogged} = useContext(TravelsContext)
 
 const handleChange = (e) =>{
   let {name, value} = e.target;
@@ -34,6 +34,7 @@ const handleSubmit = (e) =>{
       setUser(res.data.user);
       const type = res.data.user.type;
       type === 0 ? navigate("/user") : type === 1 ? navigate("/admin") : navigate("/");
+      setLogged(true);
     })
     .catch((err)=>console.log(err))
   }

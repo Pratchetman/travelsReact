@@ -38,19 +38,19 @@ export const EditUser = () => {
 
   const handleSubmit = () =>{
     const newFormData = new FormData();
+
     newFormData.append("file", file);
     newFormData.append("register", JSON.stringify(editUser));
 
     axios
     .put(`http://localhost:4000/users/editUser/${user.user_id}`, newFormData)
     .then((res)=>{
-      let newImg = res.data.img;
-      if (!res.data.img){
-        editUser.img = user.img
+      if(res.data.img === ""){
+        setUser(editUser)
       }else{
-        editUser.img = newImg
+        setUser({...editUser, img:res.data.img});
       }
-      setUser(editUser);
+      
       navigate("/user");
     })
     .catch((err)=>console.log(err));
@@ -73,8 +73,8 @@ export const EditUser = () => {
     </div>
     <label>Cambiar Imagen</label>
     <input type="file" onChange={handleChangeFile} />
-    <Button onClick={handleSubmit}>Enviar</Button>
-    <Button onClick={()=>navigate(-1)}>Cancelar</Button>
+    <Button className="buttonWidth" onClick={handleSubmit}>Enviar</Button>
+    <Button className="buttonWidth" onClick={()=>navigate(-1)}>Cancelar</Button>
     </div>}
     
   </div>

@@ -6,7 +6,7 @@ class travelController {
 
   createTravel = (req, res) => {
     // const { city, country, description } = req.body;
-    console.log("Este es el json parseado",JSON.parse(req.body.regTravel));
+    // console.log("Este es el json parseado",JSON.parse(req.body.regTravel));
     console.log("este es el reqqqq.booooddddyyyy",req.body);
     const user_id = req.params.user_id;
     const { city, country, description } = JSON.parse(req.body.regTravel);
@@ -14,7 +14,7 @@ class travelController {
     console.log("esto son las fotoooooossssss", req.files);
 
     let img = [""];
-
+    console.log("FILEEEEEEEES",req.files);
     if (req.files != undefined) {
       img = req.files;
       console.log("************************", img);

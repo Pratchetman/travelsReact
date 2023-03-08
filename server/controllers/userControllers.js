@@ -129,6 +129,7 @@ class userController {
 editUser = (req, res) => {
   let user_id = req.params.user_id;
   console.log("esteeee eeesss ellll user_id", user_id) ;
+  console.log("cooooooonsolelog",req.file);
   console.log(JSON.parse(req.body.register))
   
   const { name, lastname, phone, address, email } = JSON.parse(
@@ -137,17 +138,21 @@ editUser = (req, res) => {
   // const { name, lastname, phone, address, email } = req.body;
 
   let img = "";
-
-  if (req.file != undefined) {
+    
+  let sql = `UPDATE user SET name = "${name}", lastname = "${lastname}", phone = "${phone}", address = "${address}",email = "${email}" WHERE user_id = "${user_id}"`;
+    
+  if (req.file != undefined){
     img = req.file.filename;
+    console.log("*****imagen******",img);
+    sql = `UPDATE user SET name = "${name}", lastname = "${lastname}", phone = "${phone}", address = "${address}",email = "${email}", img = "${img}" WHERE user_id = "${user_id}"`;
+
   }
-  console.log("*****imagen******",img);
-  let sql = `UPDATE user SET name = "${name}", lastname = "${lastname}", phone = "${phone}", address = "${address}",email = "${email}", img = "${img}" WHERE user_id = "${user_id}"`;
 
   connection.query(sql, (error, result) => {
     if (error) console.log(error);
     error ? res.status(400).json({ error }) : res.status(200).json({result, img});
   });
+ 
 };
 
   //-----------------------------------------------

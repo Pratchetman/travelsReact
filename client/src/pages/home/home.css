@@ -1,0 +1,11 @@
+.cuadroHome {
+  margin: auto;
+  width: 300px;
+  padding: 30px;
+  border: 4px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.531);
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px black;
+  text-align: center;
+  margin-top: 40px;
+}/*# sourceMappingURL=home.css.map */

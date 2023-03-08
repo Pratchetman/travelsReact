@@ -1,0 +1,17 @@
+.register {
+  margin: auto;
+  width: 400px;
+  padding: 30px;
+  border: 4px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.831);
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px black;
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.register h3 {
+  text-align: start;
+}/*# sourceMappingURL=register.css.map */
